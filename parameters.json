@@ -1,0 +1,71 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "australiasoutheast"
+        },
+        "networkInterfaceName": {
+            "value": "table7wfrvm3816"
+        },
+        "networkSecurityGroupName": {
+            "value": "table7wfrVM3-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/0ab9ad2e-f316-4da5-b243-e7f65da24755/resourceGroups/table7wfrtuerg/providers/Microsoft.Network/virtualNetworks/table7wfrtuerg-vnet"
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "publicIpAddressName": {
+            "value": "table7wfrVM3-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "table7wfrVM3"
+        },
+        "virtualMachineRG": {
+            "value": "table7wfrtuerg"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "adminUsername": {
+            "value": "azureops"
+        },
+        "adminPublicKey": {
+            "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQ+G2Qeyx11fdLtwhAdTwC/bBXylp7ZRwLlmzocq0tSfttdrIJu4B/z4ycY63niIccuyoBRPyJp6ClOdinxrsBt4JSEjq1YgQF6jig4jFde2+a+sICSQIcBC8P+bSPQFrO0Q/fLsf9o1shx1c5obxa8NvkENdcaXKxrPxzSWS/rG29EAeeFVwQFwlHAuN93t5aIBBSc/2PHxwBxwS2MNS/oqpSUcR0lZxFIqQafl/1KdXzUo04Ujn6Qqpu8fmEPYOvVEC0BsUPHuXnRNmCUKCwNk4FXbEM1TSdBBb8lwNTVFIvTBuXhPOjyJB4Gb8hRQm/Wxois1KsZ0DbS0u5sxW9"
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "table7wfrtuergdiag"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "/subscriptions/0ab9ad2e-f316-4da5-b243-e7f65da24755/resourceGroups/table7wfrtuerg/providers/Microsoft.Storage/storageAccounts/table7wfrtuergdiag"
+        }
+    }
+}
